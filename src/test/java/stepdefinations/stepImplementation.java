@@ -25,12 +25,12 @@ public class stepImplementation {
             if(eachAccount.equalsIgnoreCase(AccountNumber)){
                 account.setAvaiableBalance(TotalBalance);
                 totalAvailableBalance=account.getAvaiableBalance();
-                System.out.println("Total Balance available in the Accout is "+ totalAvailableBalance);
+//                System.out.println("Total Balance available in the Accout is "+ totalAvailableBalance);
                 Assert.assertEquals(Optional.of(TotalBalance),Optional.of(totalAvailableBalance));
             }
-            else{
-                System.out.println("Something Incorrect about the ingested Account Number!! Please enter a valid Account Number");
-            }
+//            else{
+//                System.out.println("Something Incorrect about the ingested Account Number!! Please enter a valid Account Number");
+//            }
         }
 
     }
@@ -38,13 +38,13 @@ public class stepImplementation {
     public void i_request(Integer amountWithdrawn) {
 //        3. Now we have validated the total balance in GIVEN step so we will need to withdraw an amount coming from the feature file and deduct the same from total Balance
         availableBalancePostWithdrawal=totalAvailableBalance-amountWithdrawn;
-        System.out.println("Amount "+amountWithdrawn+" has been withdrawn from total balance of "+totalAvailableBalance+" and thus the new available balance is "+availableBalancePostWithdrawal);
+//        System.out.println("Amount "+amountWithdrawn+" has been withdrawn from total balance of "+totalAvailableBalance+" and thus the new available balance is "+availableBalancePostWithdrawal);
     }
     @Then("{int} should be dispensed")
     public void should_be_dispensed(Integer amountDispensed) {
 //        4. this step is to to assert that the withdrawn and dispensed value are same.. Although the same has been validated in previous step itself
         int dispensedAmount= totalAvailableBalance-availableBalancePostWithdrawal;
-        System.out.println(dispensedAmount);
+//        System.out.println(dispensedAmount);
         Assert.assertEquals(Optional.of(dispensedAmount),Optional.of(amountDispensed));
 
     }

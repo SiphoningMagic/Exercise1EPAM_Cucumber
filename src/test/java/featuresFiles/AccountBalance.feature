@@ -6,7 +6,7 @@ Feature: Withdraw cash from account
   Scenario Outline: Withdraw cash from account in credit
     Given I have a balance of <Total Amount> in my accountNumber "<AccountNumber>"
     When I request <Requested Amount>
-    Then <Dispensed Amount> should be dispensed
+    Then <Requested Amount> should be dispensed
     Examples:
-    |Total Amount| Requested Amount| Dispensed Amount|AccountNumber|
-    |100| 20| 20|ICICI09476|
+    |Total Amount| Requested Amount| AccountNumber|
+    |100| 20| ICICI09476|
